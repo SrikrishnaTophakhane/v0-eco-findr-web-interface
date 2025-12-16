@@ -1,4 +1,4 @@
-import { Brain, AlertTriangle, ThumbsUp, ThumbsDown } from "lucide-react"
+import { Brain, ThumbsUp, ThumbsDown, ShieldAlert, CheckCircle2 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Progress } from "@/components/ui/progress"
@@ -38,6 +38,27 @@ export function AIInsights() {
           </div>
         </div>
 
+        <div className="space-y-3 p-4 rounded-lg border-2 border-amber-500/30 bg-amber-50 dark:bg-amber-950/20">
+          <div className="flex items-center gap-2 mb-3">
+            <ShieldAlert className="h-5 w-5 text-amber-600 dark:text-amber-500" />
+            <h4 className="font-bold text-sm text-foreground">Fake Review Detection</h4>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div className="p-3 rounded-lg bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800">
+              <div className="text-xs text-muted-foreground mb-1">Total Fake Reviews</div>
+              <div className="text-2xl font-bold text-amber-600 dark:text-amber-500">23</div>
+              <div className="text-xs text-muted-foreground mt-1">out of 847 reviews</div>
+            </div>
+
+            <div className="p-3 rounded-lg bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800">
+              <div className="text-xs text-muted-foreground mb-1">Fake Review Rate</div>
+              <div className="text-2xl font-bold text-amber-600 dark:text-amber-500">3%</div>
+              <div className="text-xs text-muted-foreground mt-1">authenticity: 97%</div>
+            </div>
+          </div>
+        </div>
+
         {/* Key Insights */}
         <div className="space-y-3">
           <h4 className="font-semibold text-sm text-foreground">Key Insights</h4>
@@ -63,12 +84,18 @@ export function AIInsights() {
           </div>
         </div>
 
-        {/* Fake Review Detection */}
-        <Alert className="border-primary/20 bg-primary/5">
-          <AlertTriangle className="h-4 w-4 text-primary" />
-          <AlertDescription className="text-sm">
-            <span className="font-semibold">Fake Review Detection:</span> Only 3% of reviews flagged as potentially
-            inauthentic. This product has a high authenticity score.
+        <Alert className="border-2 border-primary bg-primary/10">
+          <CheckCircle2 className="h-5 w-5 text-primary" />
+          <AlertDescription>
+            <div className="space-y-2">
+              <div className="font-bold text-base text-foreground">AI Recommendation</div>
+              <div className="text-sm font-semibold text-primary">✓ Yes, you should buy this product</div>
+              <p className="text-sm text-foreground/90">
+                Based on high positive sentiment (87%), low fake review rate (3%), and consistently strong ratings
+                across noise cancellation, comfort, and battery life. This product offers excellent value at current
+                prices.
+              </p>
+            </div>
           </AlertDescription>
         </Alert>
       </CardContent>
