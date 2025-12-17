@@ -35,11 +35,11 @@ export function ProductCard() {
     <div className="space-y-6">
       <Card className="overflow-hidden">
         <CardContent className="p-0">
-          <div className="relative aspect-square bg-muted">
+          <div className="relative aspect-square bg-muted p-8">
             <img
               src="/sony-wh-1000xm5-headphones-product-photo.jpg"
               alt="Sony WH-1000XM5 Headphones"
-              className="object-cover w-full h-full"
+              className="object-contain w-full h-full"
             />
             <div className="absolute top-3 right-3">
               <Badge className="bg-primary text-primary-foreground font-semibold shadow-lg gap-1.5 px-3 py-1.5">

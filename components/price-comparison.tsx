@@ -41,13 +41,13 @@ export function PriceComparison() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="text-right">
-                  <p className="text-2xl font-bold text-foreground">${store.price}</p>
+                <div className="flex items-center gap-2">
                   {store.isBest && (
-                    <Badge variant="secondary" className="text-xs">
+                    <Badge variant="secondary" className="text-xs whitespace-nowrap">
                       Lowest Price
                     </Badge>
                   )}
+                  <p className="text-2xl font-bold text-foreground">${store.price}</p>
                 </div>
                 <Button size="sm" variant={store.isBest ? "default" : "outline"}>
                   <ExternalLink className="h-4 w-4" />

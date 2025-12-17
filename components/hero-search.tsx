@@ -9,7 +9,7 @@ export function HeroSearch() {
   const [searchQuery, setSearchQuery] = useState("")
 
   return (
-    <section className="relative py-20 sm:py-32 bg-gradient-to-b from-background to-muted/30">
+    <section className="relative pt-20 pb-10 sm:pt-32 sm:pb-16 bg-gradient-to-b from-background to-muted/30">
       <div className="container max-w-6xl">
         <div className="text-center mb-8 space-y-4 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary font-medium mb-2">
@@ -36,30 +36,22 @@ export function HeroSearch() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base"
               />
+              <div className="flex items-center gap-1 border-l pl-2 border-border/50">
+                <div className="relative">
+                  <Button variant="ghost" size="icon" className="h-9 w-9 text-muted-foreground hover:text-primary" title="Upload Image">
+                    <Upload className="h-4 w-4" />
+                  </Button>
+                  <input type="file" accept="image/*" className="absolute inset-0 opacity-0 cursor-pointer" title="Upload Image" />
+                </div>
+                <Button variant="ghost" size="icon" className="h-9 w-9 text-muted-foreground hover:text-primary" title="Camera Scan">
+                  <Camera className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
             <Button size="lg" className="gap-2 px-6">
               <Search className="h-4 w-4" />
               Search
             </Button>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-2">
-            <button className="group relative flex items-center justify-center gap-3 p-5 rounded-xl border-2 border-dashed border-border hover:border-primary hover:bg-primary/5 transition-all">
-              <Upload className="h-5 w-5 text-primary" />
-              <div className="text-center sm:text-left">
-                <p className="font-medium text-sm text-foreground">Upload Image</p>
-                <p className="text-xs text-muted-foreground">Drag & drop or click</p>
-              </div>
-              <input type="file" accept="image/*" className="absolute inset-0 opacity-0 cursor-pointer" />
-            </button>
-
-            <button className="group flex items-center justify-center gap-3 p-5 rounded-xl border-2 border-border hover:border-primary hover:bg-primary/5 transition-all">
-              <Camera className="h-5 w-5 text-primary" />
-              <div className="text-center sm:text-left">
-                <p className="font-medium text-sm text-foreground">Camera Scan</p>
-                <p className="text-xs text-muted-foreground">Take a photo</p>
-              </div>
-            </button>
           </div>
         </div>
       </div>

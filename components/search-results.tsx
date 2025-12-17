@@ -4,7 +4,7 @@ import { AIInsights } from "@/components/ai-insights"
 
 export function SearchResults() {
   return (
-    <section className="py-16 bg-background">
+    <section className="pt-8 pb-16 bg-background">
       <div className="container max-w-6xl">
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-2">Search Results</h2>
