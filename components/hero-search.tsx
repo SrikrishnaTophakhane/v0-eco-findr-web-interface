@@ -10,7 +10,7 @@ export function HeroSearch() {
 
   return (
     <section className="relative pt-20 pb-10 sm:pt-32 sm:pb-16 bg-gradient-to-b from-background to-muted/30">
-      <div className="container max-w-6xl">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-8 space-y-4 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary font-medium mb-2">
             <Sparkles className="h-3.5 w-3.5" />
@@ -34,7 +34,7 @@ export function HeroSearch() {
                 placeholder="Search for any product or paste a link..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base"
+                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base text-center"
               />
               <div className="flex items-center gap-1 border-l pl-2 border-border/50">
                 <div className="relative">
