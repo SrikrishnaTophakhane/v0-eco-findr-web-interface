@@ -5,8 +5,8 @@ import { AIInsights } from "@/components/ai-insights"
 export function SearchResults() {
   return (
     <section className="pt-8 pb-16 bg-background">
-      <div className="container max-w-6xl">
-        <div className="mb-8">
+      <div className="container mx-auto max-w-7xl px-6">
+        <div className="mb-8 text-center">
           <h2 className="text-2xl font-bold mb-2">Search Results</h2>
           <p className="text-muted-foreground">Found the best deals on Sony WH-1000XM5 Headphones</p>
         </div>
