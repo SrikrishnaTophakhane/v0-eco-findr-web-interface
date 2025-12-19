@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { HeroSearch } from "@/components/hero-search"
-import { SearchResults } from "@/components/search-results"
+import { TrendingSection } from "@/components/trending-section"
+import { RecommendedSection } from "@/components/recommended-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -9,7 +10,8 @@ export default function Home() {
       <Navigation />
       <main className="flex-1">
         <HeroSearch />
-        <SearchResults />
+        <TrendingSection />
+        <RecommendedSection />
       </main>
       <Footer />
     </div>

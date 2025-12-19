@@ -1,12 +1,26 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Search, Upload, Camera, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
 export function HeroSearch() {
   const [searchQuery, setSearchQuery] = useState("")
+  const router = useRouter()
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery)}`)
+    }
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch()
+    }
+  }
 
   return (
     <section className="relative pt-20 pb-10 sm:pt-32 sm:pb-16 bg-gradient-to-b from-background to-muted/30">
@@ -34,6 +48,7 @@ export function HeroSearch() {
                 placeholder="Search for any product or paste a link..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
                 className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base text-center"
               />
               <div className="flex items-center gap-1 border-l pl-2 border-border/50">
@@ -48,7 +63,7 @@ export function HeroSearch() {
                 </Button>
               </div>
             </div>
-            <Button size="lg" className="gap-2 px-6">
+            <Button size="lg" className="gap-2 px-6" onClick={handleSearch}>
               <Search className="h-4 w-4" />
               Search
             </Button>
