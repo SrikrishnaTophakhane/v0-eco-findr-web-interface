@@ -1,18 +1,20 @@
+import Link from "next/link"
 import { ShieldCheck, Star, TrendingUp } from "lucide-react"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 
 export function ProductCard() {
   return (
     <div className="space-y-6">
       <Card className="overflow-hidden">
         <CardContent className="p-0">
-          <div className="relative aspect-square bg-muted p-8">
+          <Link href="/product/sony-xm5" className="block relative aspect-square bg-muted p-8">
             <img
               src="/sony-wh-1000xm5-headphones-product-photo.jpg"
               alt="Sony WH-1000XM5 Headphones"
-              className="object-contain w-full h-full"
+              className="object-contain w-full h-full hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute top-3 right-3">
               <Badge className="bg-primary text-primary-foreground font-semibold shadow-lg gap-1.5 px-3 py-1.5">
@@ -20,11 +22,13 @@ export function ProductCard() {
                 92% Trust Score
               </Badge>
             </div>
-          </div>
+          </Link>
 
           <div className="p-6 space-y-4">
             <div>
-              <h3 className="font-bold text-lg mb-1">Sony WH-1000XM5 Headphones</h3>
+              <Link href="/product/sony-xm5" className="hover:underline">
+                <h3 className="font-bold text-lg mb-1">Sony WH-1000XM5 Headphones</h3>
+              </Link>
               <p className="text-sm text-muted-foreground">Premium noise-cancelling wireless headphones</p>
             </div>
 
@@ -46,12 +50,24 @@ export function ProductCard() {
               <span className="text-sm font-medium">4.8</span>
               <span className="text-sm text-muted-foreground">(2,847 reviews)</span>
             </div>
+
+            <div className="flex items-center space-x-2">
+              <Checkbox id="compare-main" />
+              <label
+                htmlFor="compare-main"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Add to Compare
+              </label>
+            </div>
           </div>
         </CardContent>
 
         <CardFooter className="p-6 pt-0">
-          <Button className="w-full" size="lg">
-            View Best Deal
+          <Button className="w-full" size="lg" asChild>
+            <a href="https://www.amazon.com/dp/B09XS7JWHH" target="_blank" rel="noopener noreferrer">
+              View Best Deal
+            </a>
           </Button>
         </CardFooter>
       </Card>

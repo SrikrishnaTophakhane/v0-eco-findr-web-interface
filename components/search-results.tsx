@@ -4,12 +4,18 @@ import { AIInsights } from "@/components/ai-insights"
 import { SimilarProducts } from "@/components/similar-products"
 import { ComparisonTool } from "@/components/comparison-tool"
 
-export function SearchResults() {
+interface SearchResultsProps {
+  query?: string
+}
+
+export function SearchResults({ query }: SearchResultsProps) {
   return (
     <section className="pt-16 pb-32 bg-background">
       <div className="container mx-auto max-w-7xl px-6">
         <div className="mb-8 text-center">
-          <h2 className="text-2xl font-bold mb-2">Search Results</h2>
+          <h2 className="text-2xl font-bold mb-2">
+            {query ? `Search Results for "${query}"` : "Search Results"}
+          </h2>
           <p className="text-muted-foreground">Found the best deals on Sony WH-1000XM5 Headphones</p>
         </div>
 

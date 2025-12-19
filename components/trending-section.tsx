@@ -8,7 +8,6 @@ const trendingProducts = [
   { id: 3, name: "Stanley Cup", image: "https://images.unsplash.com/photo-1640638545803-b097b6c50720?auto=format&fit=crop&q=80&w=200&h=200" },
   { id: 4, name: "Kindle Paperwhite", image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=200&h=200" },
   { id: 5, name: "Dyson Airwrap", image: "https://images.unsplash.com/photo-1632517596066-c30084f70513?auto=format&fit=crop&q=80&w=200&h=200" },
-  { id: 6, name: "AirTags", image: "https://images.unsplash.com/photo-1620138546344-7b2c38516edf?auto=format&fit=crop&q=80&w=200&h=200" },
 ]
 
 export function TrendingSection() {

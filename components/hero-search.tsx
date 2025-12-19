@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { Search, Upload, Camera, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { toast } from "sonner"
 
 export function HeroSearch() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -20,6 +21,10 @@ export function HeroSearch() {
     if (e.key === "Enter") {
       handleSearch()
     }
+  }
+
+  const handleFeatureComingSoon = () => {
+    toast("Scanning feature coming soon!")
   }
 
   return (
@@ -53,12 +58,13 @@ export function HeroSearch() {
               />
               <div className="flex items-center gap-1 border-l pl-2 border-border/50">
                 <div className="relative">
-                  <Button variant="ghost" size="icon" className="h-9 w-9 text-muted-foreground hover:text-primary" title="Upload Image">
+                  <Button variant="ghost" size="icon" className="h-9 w-9 text-muted-foreground hover:text-primary" title="Upload Image" onClick={handleFeatureComingSoon}>
                     <Upload className="h-4 w-4" />
                   </Button>
-                  <input type="file" accept="image/*" className="absolute inset-0 opacity-0 cursor-pointer" title="Upload Image" />
+                  {/* File input is hidden but functional for real uploads - keeping it but hooking the button click */}
+                  <input type="file" accept="image/*" className="absolute inset-0 opacity-0 cursor-pointer hidden" title="Upload Image" />
                 </div>
-                <Button variant="ghost" size="icon" className="h-9 w-9 text-muted-foreground hover:text-primary" title="Camera Scan">
+                <Button variant="ghost" size="icon" className="h-9 w-9 text-muted-foreground hover:text-primary" title="Camera Scan" onClick={handleFeatureComingSoon}>
                   <Camera className="h-4 w-4" />
                 </Button>
               </div>
