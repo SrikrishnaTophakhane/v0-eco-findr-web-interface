@@ -4,33 +4,6 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 export function ProductCard() {
-  const similarProducts = [
-    {
-      id: 1,
-      name: "Sony WH-1000XM4",
-      price: "$279.99",
-      image: "/sony-wh-1000xm4.png",
-      rating: 4.7,
-      reviews: 3245,
-    },
-    {
-      id: 2,
-      name: "Bose QC 45",
-      price: "$299.99",
-      image: "/bose-quietcomfort-45-headphones.jpg",
-      rating: 4.6,
-      reviews: 2156,
-    },
-    {
-      id: 3,
-      name: "Sennheiser Momentum 4",
-      price: "$319.99",
-      image: "/sennheiser-momentum-4-headphones.jpg",
-      rating: 4.8,
-      reviews: 1892,
-    },
-  ]
-
   return (
     <div className="space-y-6">
       <Card className="overflow-hidden">
@@ -83,36 +56,6 @@ export function ProductCard() {
         </CardFooter>
       </Card>
 
-      <Card className="overflow-hidden">
-        <CardContent className="p-6">
-          <h4 className="font-bold text-lg mb-4">Similar Products</h4>
-          <div className="space-y-3">
-            {similarProducts.map((product) => (
-              <div
-                key={product.id}
-                className="flex gap-3 p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-accent/50 transition-all cursor-pointer"
-              >
-                <div className="relative w-20 h-20 flex-shrink-0 bg-muted rounded-md overflow-hidden">
-                  <img
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h5 className="font-semibold text-sm mb-1 truncate">{product.name}</h5>
-                  <div className="flex items-center gap-1 mb-1">
-                    <Star className="h-3 w-3 fill-primary text-primary" />
-                    <span className="text-xs font-medium">{product.rating}</span>
-                    <span className="text-xs text-muted-foreground">({product.reviews.toLocaleString()})</span>
-                  </div>
-                  <p className="font-bold text-primary">{product.price}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
     </div>
   )
 }
