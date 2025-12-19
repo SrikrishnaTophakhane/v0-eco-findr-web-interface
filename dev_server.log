@@ -7,11 +7,7 @@
    - Network:       http://192.168.0.2:3000
 
  ✓ Starting...
- ✓ Ready in 668ms
+ ✓ Ready in 714ms
  ○ Compiling / ...
- GET / 200 in 6.2s (compile: 5.5s, render: 714ms)
- GET /search?q=Sony+Headphones 200 in 927ms (compile: 693ms, render: 234ms)
- ✓ Compiled in 46ms
- GET / 200 in 228ms (compile: 5ms, render: 224ms)
- GET /search?q=Sony+Headphones 200 in 263ms (compile: 124ms, render: 139ms)
- ✓ Compiled in 33ms
+ GET / 200 in 6.3s (compile: 5.6s, render: 699ms)
+ GET /search?q=Sony+Headphones 200 in 1128ms (compile: 862ms, render: 266ms)

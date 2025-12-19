@@ -1,7 +1,8 @@
 import { Star, Check } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 
 const similarProducts = [
   {
@@ -55,7 +56,7 @@ export function SimilarProducts() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <CardContent className="p-4">
+              <CardContent className="p-4 space-y-3">
                 <div className="flex justify-between items-start mb-2">
                   <h4 className="font-semibold text-sm line-clamp-2">{product.name}</h4>
                   <div className="flex items-center text-yellow-500 text-xs font-medium">
@@ -63,14 +64,25 @@ export function SimilarProducts() {
                     {product.rating}
                   </div>
                 </div>
-                <div className="text-lg font-bold mb-2">${product.price}</div>
-                <div className="flex flex-wrap gap-1 mb-3">
+                <div className="text-lg font-bold">${product.price}</div>
+                <div className="flex flex-wrap gap-1">
                   {product.features.map((feature, idx) => (
                     <Badge key={idx} variant="secondary" className="text-[10px] px-1.5 h-5">
                       {feature}
                     </Badge>
                   ))}
                 </div>
+
+                <div className="flex items-center space-x-2 pt-1">
+                  <Checkbox id={`compare-similar-${product.id}`} />
+                  <label
+                    htmlFor={`compare-similar-${product.id}`}
+                    className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Add to Compare
+                  </label>
+                </div>
+
                 <Button className="w-full h-8 text-xs" variant="outline">View Details</Button>
               </CardContent>
             </Card>
