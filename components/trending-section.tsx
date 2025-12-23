@@ -17,7 +17,7 @@ export function TrendingSection() {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-primary" />
-            <h2 className="text-2xl font-bold">Trending Now</h2>
+            <h2 className="text-2xl font-bold">Most Searched</h2>
           </div>
           <Button variant="ghost" className="gap-1 text-primary">
             View All <ArrowRight className="h-4 w-4" />

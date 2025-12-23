@@ -41,7 +41,12 @@ const betterValuePick = {
   savings: "$200+"
 }
 
-export function SimilarProducts() {
+interface SimilarProductsProps {
+  onCompareToggle?: (product: any) => void
+  selectedIds?: string[]
+}
+
+export function SimilarProducts({ onCompareToggle, selectedIds = [] }: SimilarProductsProps) {
   return (
     <div className="space-y-8">
       <div>
@@ -74,7 +79,11 @@ export function SimilarProducts() {
                 </div>
 
                 <div className="flex items-center space-x-2 pt-1">
-                  <Checkbox id={`compare-similar-${product.id}`} />
+                  <Checkbox
+                    id={`compare-similar-${product.id}`}
+                    checked={selectedIds.includes(String(product.id))}
+                    onCheckedChange={() => onCompareToggle?.({ ...product, id: String(product.id) })}
+                  />
                   <label
                     htmlFor={`compare-similar-${product.id}`}
                     className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
