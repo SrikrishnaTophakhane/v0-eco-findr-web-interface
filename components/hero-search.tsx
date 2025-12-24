@@ -24,7 +24,7 @@ export function HeroSearch() {
   }
 
   const handleFeatureComingSoon = () => {
-    toast("Scanning feature coming soon!")
+    toast("Image Analysis Module Loading...")
   }
 
   return (

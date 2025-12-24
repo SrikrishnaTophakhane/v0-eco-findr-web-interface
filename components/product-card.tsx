@@ -5,7 +5,19 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 
-export function ProductCard() {
+interface ProductCardProps {
+  onCompareToggle?: (product: any) => void
+  isChecked?: boolean
+}
+
+export function ProductCard({ onCompareToggle, isChecked }: ProductCardProps) {
+  const productData = {
+    id: "sony-xm5",
+    name: "Sony WH-1000XM5 Headphones",
+    price: 329.99,
+    image: "/sony-wh-1000xm5-headphones-product-photo.jpg"
+  }
+
   return (
     <div className="space-y-6">
       <Card className="overflow-hidden">
@@ -52,7 +64,11 @@ export function ProductCard() {
             </div>
 
             <div className="flex items-center space-x-2">
-              <Checkbox id="compare-main" />
+              <Checkbox
+                id="compare-main"
+                checked={isChecked}
+                onCheckedChange={() => onCompareToggle?.(productData)}
+              />
               <label
                 htmlFor="compare-main"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
